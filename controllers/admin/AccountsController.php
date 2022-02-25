@@ -62,8 +62,6 @@ class AccountsController extends Controller
                 ]
             ],
         ]);
-        var_dump($dataProvider);
-        die();
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
