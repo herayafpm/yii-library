@@ -22,7 +22,7 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            [['username','password'],'required'],
+            [['username','password'],'required','message' => '{attribute} tidak boleh kosong.'],
             ['password','validatePassword']
         ];
     }
@@ -32,7 +32,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Username / password salah.');
             }
         }
     }

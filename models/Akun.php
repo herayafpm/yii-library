@@ -2,11 +2,44 @@
 
 namespace app\models;
 
+use Yii;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 class Akun extends ActiveRecord implements IdentityInterface
 {
+    public function rules()
+    {
+        return [
+            [['username', 'nama', 'password', 'authKey', 'accessToken'], 'string', 'max' => 255],
+            [['username'], 'unique'],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'username' => Yii::t('app', 'Username'),
+            'nama' => Yii::t('app', 'Nama'),
+            'password' => Yii::t('app', 'Password'),
+            'authKey' => Yii::t('app', 'Auth Key'),
+            'accessToken' => Yii::t('app', 'Access Token'),
+        ];
+    }
+    
+
+    /**
+     * {@inheritdoc}
+     * @return AkunQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new AkunQuery(get_called_class());
+    }
     
     public function beforeSave($insert)
     {
