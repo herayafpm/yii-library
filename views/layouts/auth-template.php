@@ -13,7 +13,7 @@ $this->beginPage() ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= Html::encode($this->title ?? 'Login') ?> | <?= Yii::$app->params['APP_NAME'] ?></title>
-    <link rel='icon' href='<?= Url::base() . "/favicon.ico" ?>'>
+    <link rel='icon' href='<?= Url::to("@web/favicon.ico") ?>'>
     <?php $this->registerCsrfMetaTags() ?>
     <?php $this->head() ?>
 </head>
