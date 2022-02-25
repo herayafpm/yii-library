@@ -113,7 +113,7 @@ class AccountsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->password = '';
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

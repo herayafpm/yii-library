@@ -43,7 +43,9 @@ class Akun extends ActiveRecord implements IdentityInterface
     
     public function beforeSave($insert)
     {
-        $this->password = password_hash($this->password,PASSWORD_DEFAULT);
+        if(!empty($this->password)){
+            $this->password = password_hash($this->password,PASSWORD_DEFAULT);
+        }
         return parent::beforeSave($insert);
     }
 
