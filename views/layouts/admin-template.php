@@ -79,6 +79,30 @@ $this->beginPage() ?>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?= Url::toRoute("/admin/buku") ?>" class="nav-link <?= $this->context->route === 'admin/buku/index' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Buku
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= Url::toRoute("/admin/peminjaman") ?>" class="nav-link <?= $this->context->route === 'admin/peminjaman/index' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Peminjaman
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= Url::toRoute("/admin/pengembalian") ?>" class="nav-link <?= $this->context->route === 'admin/pengembalian/index' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Pengembalian
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= Url::toRoute("/auth/logout") ?>" class="nav-link">
                                 <i class="nav-icon fas fa-power-off"></i>
                                 <p>
